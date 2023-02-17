@@ -1,0 +1,204 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root{
+    --main:#036e3a;
+}
+
+
+body{
+    background-image: url("./Images/dan-meyers-IQVFVH0ajag-unsplash.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
+}
+
+.container{
+    width: 999px;
+    height: 690px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;    
+    border-radius: 20px;
+}
+
+.container .image-side{
+
+    background-image: url("./Images/roman-synkevych-fjj7lVpCxRE-unsplash.jpg");
+    width: 50%;
+    position: absolute;    
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+    border-radius: 20px 0px 0px 20px;
+
+
+}
+
+.container .content-side{
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 50%;
+    background-color: rgba(255, 255, 255, 0.47);
+    padding: 30px;
+    backdrop-filter: blur(5px);
+    border-radius: 0px 20px 20px 0px;
+    
+}       
+
+.login-heading{
+    width: 100%;
+    height: 80px;
+}
+
+.login-heading img{
+    height: 100%;
+    padding-left: 50px;
+}
+
+.content-side #sub-heading-1{
+    margin-top: 100px;
+    margin-left: 40px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #036e3a;
+}
+
+.content-side #sub-heading-2{
+    padding-left: 40px;
+    margin-top: 40px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: #036e3a;
+}
+
+.content-side #sub-heading-3{
+    padding-left: 40px;
+    margin-top: 20px;
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 550;
+    margin-bottom: 10px;
+}
+
+.form{
+    width: 100%;
+    min-height: 20%;
+    padding: 10px;
+    padding-left: 40px;
+  
+}
+
+.form .username{
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid black;
+    outline: none;
+    background-color: transparent;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 10px 0px 16px 0px;
+    
+}
+
+.form .Password{
+    padding: 10px;
+    width: 100%;
+    border: 2px solid black;
+    outline: none;
+    border-radius: 10px;
+    background-color: transparent;
+    font-size: 1.1rem;
+    margin: 10px 0px 10px 0px;
+}
+
+.form label{
+    font-weight: 600;
+    font-size: 0.9rem;
+
+}
+
+::placeholder{
+    color: #555;
+    font-weight: bold;
+    font-size: 0.8rem;
+    
+}
+
+
+.rememberme{
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+
+.submit{
+    width: 100%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    outline: none;
+    border: 2px solid black;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 20px;
+    transition: all .5s ease;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.244);
+    color: white;
+}
+
+
+#footer{
+    text-align: center;
+    padding-top: 15px;
+    color: black;
+    font-size: 0.9rem;
+}
+
+#footer a{
+    color: black;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+#footer a:hover{
+    color: #036e3a;
+}
+
+.submit:hover{
+    background-color: #036e3a;
+    color: white;
+   
+}
+
+@media (max-width:992px)
+{
+    .image-side{
+        display: none;
+    }
+
+    .container .content-side{
+        width: 100%;
+        left: 0;
+        height: 100%;
+        border-radius: 0px;
+        backdrop-filter: blur(3px);
+    }
+}

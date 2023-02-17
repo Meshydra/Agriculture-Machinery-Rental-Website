@@ -1,0 +1,2302 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+:root{
+    --main:#036e3a;
+}
+
+.header{
+    max-width: 100vw;
+    min-height: 50vh;
+    
+}
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    width: 100vw;
+    height: 85px;
+    background-color: transparent;
+    justify-content: space-evenly;
+    z-index: 99;
+    background-color: white;
+    position: fixed;
+   
+  
+}
+
+.nav-bar .logo{
+
+    width: 70%;
+    height: 100%;
+    
+    
+}
+
+.nav-bar .logo img{
+   width: 100%;
+   margin-top: 10px;
+   padding-left: 10px;
+}
+
+.nav-bar #nav-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-bar #nav-links li a{
+    color: #444;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    
+}
+
+
+.nav-bar #login{
+    width: 10rem;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid var(--main);
+    background: none;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.nav-bar #login:hover{
+    background-color: #036e3a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-image{
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    z-index: -3;
+  
+
+}
+
+.hero-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    
+}
+
+.hero-image video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    
+}
+
+.mobile_nav
+{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    right:100%;
+    top: 85px;
+    transition: .8s;
+    display: none;
+    z-index: 999;
+        
+}
+#mobile_nav_links{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 35px;
+    border-bottom: 1px solid #036e3a;
+    list-style: none;
+    padding-bottom: 50px;
+    
+}
+
+#mobile_nav_links li a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 35px;
+    letter-spacing: 1px;
+} 
+
+.right-bar{
+    width: 35px;
+    height: 35px;
+    background: none;
+    border: none;
+    display: none;
+
+}
+
+.right-bar::before,
+.right-bar .bar,
+.right-bar::after{
+    content: '';
+    width: 100%;
+    background-color: #036e3a;
+    display: block;
+    height: 3px;
+    margin: 6px 0px;
+    transition: .5s;
+    border-radius: 15%;
+}
+
+#mobile_nav_links li,a{
+    transition: .5s;
+    padding: 10px;
+}
+
+#mobile_nav_links li{
+    position: relative;
+}
+
+#mobile_nav_links li a::before{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #036e3a;
+    position: absolute;
+    bottom: -5px;
+    transition: all .5s ease;
+    border-radius: 15px;
+}
+
+#mobile_nav_links li a:hover::before{
+    width: 30%;
+}
+
+
+
+#mobile_login{
+
+    width: 10rem;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #036e3a;
+    background: none;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 35px;
+    margin-left: 35px;
+    transition: all .5s ease;
+
+}
+
+.right-bar.is-active .bar{
+    opacity: 0;
+}
+
+.right-bar.is-active::before{
+    transform: rotate(-45deg) translate(-8px,7px);
+}
+
+.right-bar.is-active::after{
+    transform: rotate(45deg) translate(-6px,-6px);
+}
+
+
+.mobile_footer{
+    
+    background-color: rgba(0, 0, 0, 0.162);
+    display: flex;
+    height: 15%;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    bottom: 10%;
+}
+
+.mobile_footer p{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+#mobile_login:hover{
+    background-color: #036e3a;
+    color: white;
+    
+}
+
+
+
+@media (max-width:992px){
+        .right-side{
+            display: none;
+        }
+
+        #login{
+            display: none;
+        }
+
+        .right-bar{
+            display: block;
+        }
+
+        .mobile_nav{
+            display: block;
+        }
+}
+
+.mobile_nav.is-active{
+    right: 0%;
+}
+
+#nav-links li{
+    position: relative;
+}
+
+
+#nav-links li a::before{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #036e3a;
+    position: absolute;
+    bottom: -10px;
+    transition: all .5s ease;
+    border-radius: 15px;
+    left:0.4%;
+}
+
+#nav-links .activate a::before{
+    width: 100%;
+    
+}
+
+
+#nav-links li a:hover::before{
+    width: 100%;
+}
+
+.hero-image{
+
+    background-image: url("./Images/crops-hero-image.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    margin-top: 85px;
+   
+   
+}
+
+.fertilizer-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.456);
+    text-align: center;
+}
+.fertilizer-text h1{
+    font-size: 5.5rem;
+    color: white;
+    letter-spacing: 2px;
+    animation-name: fertilizer;
+    animation-duration: 2s;
+}
+
+@keyframes fertilizer{
+    from{
+        transform: translateX(-100%);
+    }
+
+    to{
+        transform: translateX(0%);
+    }
+}
+
+.fertilizer-box{
+ 
+    max-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 3%;
+}
+
+.fertilizer-box .boxes{
+    width: 320px;
+    height: 350px;
+    margin: 10px;
+   background-color:white;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
+
+
+.boxes .img{
+    width: 100%;
+    height: 60%;
+ 
+    overflow: hidden;
+}
+
+.img img{
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+    transition: all .3s ease;
+}
+
+.product-name{
+    width: 100%;
+    
+}
+
+.product-name p{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 20px;
+    
+}
+
+.product-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50px;
+    gap: 10px;
+    margin-top: 35px;
+}
+
+.product-footer button{
+
+    width: 45%;
+    border: 2px solid #036e3a;
+    outline: none;
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+    font-size: 1.1rem;
+    transition: all .5s ease;
+    background-color: transparent;
+    
+    
+}
+
+.img img:hover{
+    transform: scale(1.5);
+}
+
+.product-footer button:hover{
+    background-color: #058949;
+    color: white;
+}
+
+
+
+.footer{
+    width: 100%;
+    min-height: 15vh;
+    background-color: #036e3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 5rem;
+}
+
+.footer p:hover{
+    cursor: pointer;
+}
+
+
+.left-side-footer p{
+   padding-left: 30px;
+   font-weight: bold;
+   font-size: 1.2rem;
+}
+
+.right-side-footer p{
+    padding-right: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+.right-side-footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.right-side-footer a:hover{
+    cursor: pointer;
+}
+
+
+@media(max-width:992px)
+{
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .left-side-footer p{
+        font-size: 1rem;
+        
+    }
+
+    .right-side-footer p{
+        font-size: 1rem;
+    }
+}
+
+
+.mega{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.247);
+    backdrop-filter: blur(5px);   
+}
+
+
+
+button:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+.containers-mega1{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega1 .container1{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega1.actived{
+    display: flex;
+}
+.container1 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image1{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived{
+    display: flex;
+}
+
+
+
+
+
+
+
+.containers-mega2{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega2 .container2{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega2.actived2{
+    display: flex;
+}
+.container2 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image2{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived2{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.containers-mega3{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega3 .container3{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega3.actived3{
+    display: flex;
+}
+.container3 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image3{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived3{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+.containers-mega4{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega4 .container4{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega4.actived4{
+    display: flex;
+}
+.container4 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image4{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived4{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+.containers-mega5{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega5 .container5{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega5.actived5{
+    display: flex;
+}
+.container5 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image5{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived5{
+    display: flex;
+}
+
+
+
+
+
+
+
+.containers-mega6{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega6 .container6{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega6.actived6{
+    display: flex;
+}
+.container6 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image6{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived6{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+.containers-mega7{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega7 .container7{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega7.actived7{
+    display: flex;
+}
+.container7 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image7{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived7{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+.containers-mega8{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega8 .container8{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega8.actived8{
+    display: flex;
+}
+.container8 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image8{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived8{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+.containers-mega9{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega9 .container9{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega9.actived9{
+    display: flex;
+}
+.container9 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image9{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived9{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+.containers-mega10{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega10 .container10{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega10.actived10{
+    display: flex;
+}
+.container10 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image10{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived10{
+    display: flex;
+}
+
+
+
+
+
+
+.containers-mega11{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega11 .container11{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega11.actived11{
+    display: flex;
+}
+.container11 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image11{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived11{
+    display: flex;
+}
+
+
+
+
+
+
+.containers-mega12{
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+.mega .containers-mega12 .container12{
+    width: 1100px;
+    height:470px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.containers-mega12.actived12{
+    display: flex;
+}
+.container12 .fa-close{
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.main-image12{
+    display: flex;
+    max-height: 350px;
+    transition: all 0.5s ease;
+}
+.mega.actived12{
+    display: flex;
+}
+
+
+
+
+
+.card-left img{
+    width: 100%;
+    display: block;
+}
+.card-left{
+    width: 550px;
+    overflow: hidden;
+    height: 100%;
+}
+.mega img{
+    object-fit: cover;
+}
+.img-select{
+    display: flex;
+    max-width: 100%;
+}
+
+
+
+
+#heading{
+    width: 80%;
+}
+
+.star-detail-page{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    height: 30px;
+ 
+}
+
+.star-detail-page span{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 10px;
+    color: #888;
+    height: 100%;
+    padding-top: 10.5px;
+}
+
+.sweet-star{
+    font-size: 1.1rem;
+}
+
+.sweet-star:hover{
+    cursor: pointer;
+}
+
+#right-page-price{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+ 
+}
+
+
+#right-page-price span{
+    color: #999;
+    font-size: 0.9rem;
+  
+}
+
+.right-page-description{
+
+    text-align: justify;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    
+}
+
+.right-page-description p{
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.right-page-quantity{
+
+    display: flex;
+    margin-top: 30px;
+    width: 50%;
+}
+
+#right-page-minus{
+    background-color: black;
+    width: 20%;
+    color: white;
+    font-size: 1.3rem;
+
+}
+
+#right-page--qty{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+
+}
+
+
+#right-page-plus{
+    background-color: black;
+    width: 20%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.climatic-requirements{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.climatic-requirements h3{
+    margin-bottom: 15px;
+}
+
+.climatic-requirements p{
+    color: #888;
+}
+
+
+
+.card-right{
+    padding: 20px;
+}
+
+.right-page--confirm-buy{
+    margin-top: 25px;
+}
+
+#right-page-buy{
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 30%;
+    padding: 10px;
+    background-color: #036e3a;
+    color: white;
+    border: none;
+    outline: none;
+    transition: all .5s ease;
+    width: 45%;
+}
+
+#right-page-buy:hover{
+    background-color: black;
+
+}
+
+
+
+
+.sell-mega{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.247);
+    backdrop-filter: blur(5px);  
+}
+
+
+
+.sell-click1{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click1 .sell-image1{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click1 .sell-image1 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click1 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click1 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-1{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-1{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-1 label{
+    margin-bottom: 40px;
+}
+
+#sell1-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+.sell1-minus{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+.sell1-plus{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell1-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+.sell-click2{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click2 .sell-image2{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click2 .sell-image2 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click2 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click2 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-2{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-2{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-2 label{
+    margin-bottom: 40px;
+}
+
+#sell2-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell2-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell2-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+.sell-click3{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click3 .sell-image3{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click3 .sell-image3 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click3 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click3 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-3{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-3{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-3 label{
+    margin-bottom: 40px;
+}
+
+#sell3-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell3-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell3-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.sell-click4{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click4 .sell-image4{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click4 .sell-image4 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click4 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click4 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-4{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-4{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-4 label{
+    margin-bottom: 40px;
+}
+
+#sell4-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell4-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell4-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.sell-click5{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click5 .sell-image5{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click5 .sell-image5 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click5 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click5 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-5{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-5{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-5 label{
+    margin-bottom: 40px;
+}
+
+#sell5-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell5-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell5-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+.sell-click6{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click6 .sell-image6{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click6 .sell-image6 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click6 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click6 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-6{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-6{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-6 label{
+    margin-bottom: 40px;
+}
+
+#sell6-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell6-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell6-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+.sell-click7{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click7 .sell-image7{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click7 .sell-image7 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click7 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click7 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-7{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-7{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-7 label{
+    margin-bottom: 40px;
+}
+
+#sell7-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell7-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell7-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+.sell-click8{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click8 .sell-image8{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click8 .sell-image8 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click8 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click8 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-8{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-8{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-8 label{
+    margin-bottom: 40px;
+}
+
+#sell8-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell8-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell8-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.sell-click9{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click9 .sell-image9{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click9 .sell-image9 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click9 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click9 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-9{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-9{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-9 label{
+    margin-bottom: 40px;
+}
+
+#sell9-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell9-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell9-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+.sell-click10{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click10 .sell-image10{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click10 .sell-image10 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click10 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click10 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-10{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-10{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-10 label{
+    margin-bottom: 40px;
+}
+
+#sell10-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell10-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell10-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+.sell-click11{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click11 .sell-image11{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click11 .sell-image11 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click11 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click11 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-11{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-11{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-11 label{
+    margin-bottom: 40px;
+}
+
+#sell11-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell11-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell11-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+
+
+
+
+.sell-click12{
+    background-color: white;
+    height: 85vh;
+    width: 30vw;
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.sell-click12 .sell-image12{
+    width: 100%;
+    height: 40%;
+}
+
+.sell-click12 .sell-image12 img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.sell-click12 h1{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.sell-click12 .fa-close{
+    position: absolute;
+    right: 1rem;
+    top: 0.5rem;
+    z-index: 1;
+}
+
+
+#sell-description-12{
+    color: #888;
+    padding: 10px;
+    padding-top: 10px;
+}
+
+.sell-footer-12{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.sell-footer-12 label{
+    margin-bottom: 40px;
+}
+
+#sell12-qty input{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 50%;
+}
+
+#sell12-qty button{
+    background-color: black;
+    width: 15%;
+    color: white;
+    font-size: 1.3rem;
+}
+
+
+#sell12-location select{
+    outline: none;
+    border: 1px solid #ccc;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+#sell_btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    width: 30%;
+    padding: 10px;
+    background-color: #036e3a;
+    color: white;
+    border: none;
+    outline: none;
+    transition: all .5s ease;
+    width: 45%;
+    margin-top: 40px;
+}
+
+#sell_btn:hover{
+    background-color: black;
+}

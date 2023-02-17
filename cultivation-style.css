@@ -1,0 +1,665 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+   overflow-x: hidden;
+}
+
+:root{
+    --main:#036e3a;
+}
+
+.header{
+    
+    width: 100vw;
+    min-height: 50vh;
+    
+}
+
+
+.nav-bar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 85px;
+    background-color: transparent;
+    justify-content: space-evenly;
+    z-index: 99;
+    background-color: white;
+    position: fixed;
+   
+  
+}
+
+.nav-bar .logo{
+
+    width: 70%;
+    height: 100%;
+    
+    
+}
+
+.nav-bar .logo img{
+   width: 100%;
+   margin-top: 10px;
+   padding-left: 10px;
+}
+
+.nav-bar #nav-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-bar #nav-links li a{
+    color: #444;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+    
+}
+
+
+.nav-bar #login{
+    width: 10rem;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid var(--main);
+    background: none;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-right: 10px;
+    transition: .5s;
+}
+
+.nav-bar #login:hover{
+    background-color: #036e3a;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+.mobile_nav
+{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: whitesmoke;
+    right:100%;
+    top: 85px;
+    transition: .8s;
+    display: none;
+    z-index: 999;
+        
+}
+#mobile_nav_links{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 35px;
+    border-bottom: 1px solid #036e3a;
+    list-style: none;
+    padding-bottom: 50px;
+    
+}
+
+#mobile_nav_links li a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 35px;
+    letter-spacing: 1px;
+} 
+
+.right-bar{
+    width: 35px;
+    height: 35px;
+    background: none;
+    border: none;
+    display: none;
+
+}
+
+.right-bar::before,
+.right-bar .bar,
+.right-bar::after{
+    content: '';
+    width: 100%;
+    background-color: #036e3a;
+    display: block;
+    height: 3px;
+    margin: 6px 0px;
+    transition: .5s;
+    border-radius: 15%;
+}
+
+#mobile_nav_links li,a{
+    transition: .5s;
+    padding: 10px;
+}
+
+#mobile_nav_links li{
+    position: relative;
+}
+
+#mobile_nav_links li a::before{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #036e3a;
+    position: absolute;
+    bottom: -5px;
+    transition: all .5s ease;
+    border-radius: 15px;
+}
+
+#mobile_nav_links li a:hover::before{
+    width: 30%;
+}
+
+
+
+#mobile_login{
+
+    width: 10rem;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #036e3a;
+    background: none;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 35px;
+    margin-left: 35px;
+    transition: all .5s ease;
+
+}
+
+.right-bar.is-active .bar{
+    opacity: 0;
+}
+
+.right-bar.is-active::before{
+    transform: rotate(-45deg) translate(-8px,7px);
+}
+
+.right-bar.is-active::after{
+    transform: rotate(45deg) translate(-6px,-6px);
+}
+
+
+.mobile_footer{
+    
+    background-color: rgba(0, 0, 0, 0.162);
+    display: flex;
+    height: 15%;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    justify-content: center;
+    bottom: 10%;
+}
+
+.mobile_footer p{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+#mobile_login:hover{
+    background-color: #036e3a;
+    color: white;
+    
+}
+
+
+
+@media (max-width:992px){
+        .right-side{
+            display: none;
+        }
+
+        #login{
+            display: none;
+        }
+
+        .right-bar{
+            display: block;
+        }
+
+        .mobile_nav{
+            display: block;
+        }
+}
+
+#nav-links li{
+
+    position: relative;
+}
+
+.mobile_nav.is-active{
+    right: 0%;
+}
+
+#nav-links li a::before{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background-color: #036e3a;
+    position: absolute;
+    bottom: -5px;
+    transition: all .5s ease;
+    border-radius: 15px;
+}
+
+#nav-links li a:hover::before{
+    width: 100%;
+}
+
+.hero-image{
+    width: 100vw;
+    height: 50vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.537),rgba(0, 0, 0, 0.542)),url("./Images/cultivation-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: darken;
+    position: relative;
+    top: 85px;
+    
+  
+}
+
+.hero-image h1{
+    position: absolute;
+    text-align: center;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 5.5rem;
+    top: 35%;
+    left: 35%;
+    animation-name: cultivate;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+   
+}
+
+@keyframes cultivate{
+   from{
+    transform: translateX(-100%);
+   }
+
+   to{
+    transform: translate(0);
+   }
+}
+
+
+.body{
+    max-width: 100vw;
+    min-height: 150vh;
+    display: grid;
+    place-items: center;
+    
+}
+
+.crops{
+    
+    width: 90vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    
+    
+}
+
+.wheat-grain{
+    display: flex;
+    width: 100%;
+    height: 40vh;
+    border-radius: 20px;
+    background-color: rgb(245, 244, 244);
+}
+.legumes{
+    display: flex;
+    width: 100%;
+    height: 40vh;
+    border-radius: 20px;
+    background-color: rgb(245, 244, 244);
+}
+.vegetables{
+    display: flex;
+    background-color: rgb(245, 244, 244);
+    width: 100%;
+    height: 40vh;
+    border-radius: 20px;
+}
+.roots{
+    display: flex;
+    background-color: rgb(245, 244, 244);
+    width: 100%;
+    height: 40vh;
+    border-radius: 20px;
+}
+
+.ferti{
+    display: flex;
+    background-color: rgb(245, 244, 244);
+    width: 100%;
+    height: 40vh;
+    border-radius: 20px;
+}
+.pesti{
+    display: flex;
+    background-color: rgb(245, 244, 244);
+    width: 100%;
+    height: 40vh;
+    border-radius: 20px;
+}
+
+.crops h1{
+   
+    font-size: 3.5rem;
+    padding-top: 65px;
+   
+}
+
+
+.wheat-grain .image{
+    min-width: 30%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+    background-color: red;
+}
+.wheat-grain img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+    transition: all .5s ease;
+}
+
+.legumes .image{
+    min-width: 30%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.legumes img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+    transition:  all .5s ease;
+}
+
+
+.vegetables .image{
+    min-width: 30%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.vegetables img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+    transition:  all .5s ease;
+}
+
+.roots .image{
+    min-width: 30%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+    background-color: red;
+}
+.roots img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+    transition: all .5s ease;
+}
+.ferti .image{
+    min-width: 30%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+    background-color: red;
+}
+.ferti img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+    transition: all .5s ease;
+}
+.pesti img{
+    width: 100%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    object-fit: cover;
+    transition: all .5s ease;
+}
+.pesti .image{
+    min-width: 30%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px 0px 0px 20px;
+    background-color: red;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    gap: 20px;
+}
+
+
+
+.content h1{
+    color: #036e3a;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+}
+
+
+.content p{
+    color: rgb(135, 133, 133);
+}
+
+
+@media(max-width:992px)
+{   
+    .wheat-grain .image{
+        width: 50%;
+        
+    }
+
+    .wheat-grain .content{
+        width: 50%;
+       
+    }
+    .legumes .image{
+        width: 50%;
+    }
+
+    .legumes .content{
+        width: 50%;
+    }
+    .vegetables .image{
+        width: 50%;
+    }
+
+    .vegetables .content{
+        width: 50%;
+    }
+    .roots .image{
+        width: 50%;
+    }
+    .roots .content{
+        width: 50%;
+    }
+
+    .ferti .image{
+        width: 50%;
+    }
+    .ferti .content{
+        width: 50%;
+    }
+
+    .pesti .image{
+        width: 50%;
+    }
+    .pesti .content{
+        width: 50%;
+    }
+
+  .content p{
+    text-align: justify;
+  }
+
+    .content h1{
+        font-size: 1.5rem;
+        padding-top: 0;
+    }
+
+   
+
+    .wheat-grain{
+        height: 45vh;
+    }
+
+    .legumes{
+        height: 45vh;
+    }
+
+    .vegetables{
+        height: 45vh;
+    }
+    .roots{
+        height: 45vh;
+    }
+    
+
+     .ferti{
+         height: 45vh;
+    }
+    
+    .pesti{
+        height: 45vh;
+   }
+
+    .crops h1{
+        margin-top: 1rem;
+    }
+    
+
+    .hero-image h1{
+        left: 2%;
+        top: 30%;
+    }
+}
+
+.wheat-grain img:hover{
+    transform: scale(1.2);
+}
+.legumes img:hover{
+    transform: scale(1.2);
+}
+.vegetables img:hover{
+    transform: scale(1.2);
+}
+.roots img:hover{
+    transform: scale(1.2);
+}
+.ferti img:hover{
+    transform: scale(1.2);
+}
+.pesti img:hover{
+    transform: scale(1.2);
+}
+
+
+
+
+.footer{
+    width: 100%;
+    min-height: 15vh;
+    background-color: #036e3a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    margin-top: 5rem;
+}
+
+.footer p:hover{
+    cursor: pointer;
+}
+
+
+.left-side-footer p{
+   padding-left: 30px;
+   font-weight: bold;
+   font-size: 1.2rem;
+}
+
+.right-side-footer p{
+    padding-right: 30px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+
+.right-side-footer a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.right-side-footer a:hover{
+    cursor: pointer;
+}
+
+
+@media(max-width:992px)
+{
+    .footer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .left-side-footer p{
+        font-size: 1rem;
+        
+    }
+
+    .right-side-footer p{
+        font-size: 1rem;
+    }
+}
